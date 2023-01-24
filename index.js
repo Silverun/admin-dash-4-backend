@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 dotenv.config();
 
-const port = 5000;
+const PORT = 5000;
 const DATABASE_URL =
   'mysql://ndaupe9jpnrsscnf5jpm:pscale_pw_bMhSroZ3PdrAEMhwCs6UZHSpekV7DT2O0UpUJMj8Jj3@eu-central.connect.psdb.cloud/task4?ssl={"rejectUnauthorized":true}';
 
@@ -167,6 +167,6 @@ app.post("/delete", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Running on port ${port}`);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Running on port ${PORT}`);
 });
